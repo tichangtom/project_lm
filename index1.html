@@ -1,0 +1,532 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>反诈大数据平台</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/comon1.css">
+</head>
+
+<body>
+	<div class="loading">
+		<div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+	</div>
+	<div class="head">
+		<h1><a href="http://localhost:8080/#/report">反诈大数据平台</a></h1>
+	</div>
+	<div class="mainbox">
+		<ul class="clearfix">
+			<li>
+				<div class="boxall" style="height:calc(50% - .25rem);">
+					<div class="tit01">主叫/被叫比例</div>
+					<div class="boxnav nav01">
+						<div id="echart1" style="width: 100%; height: 80%;"></div>
+						<div>
+							<div class="l1">
+								<div class="l1_01">话单数量</div>
+								<div class="l1_02">1685188</div>
+							</div>
+							<div class="l1">
+								<div class="l1_01">涉案话单数量</div> 
+								<div class="l1_02">89</div>
+							</div>
+							<div class="l1">
+								<div class="l1_01">预警话单数量</div>
+								<div class="l1_02">306</div>
+							</div>
+						</div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+				<style>
+					.l1 {
+						float: left;
+						margin-left: 20px;
+					}
+					.l1_01 {
+						font-size: 2em;
+						padding-left: 5px;
+						color: #b1d5c8; 
+					}
+					.l1_02 {
+						height: 24px;
+						line-height: 32px;
+						padding-left: 10px;
+						width: 100px;
+						background-color: rgba(91, 52, 231, 0.767);
+						margin: 0 auto;
+						margin-top: 0px;
+						font-size: 20px;
+					}
+				</style>
+				<div class="boxall" style="height:calc(50% - .25rem)">
+					<div class="tit01">高频通信基站</div>
+					<div class="boxnav nav01">
+						<div style="width: 45%; height: 100%; float: left;">
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">mk1shiXuY1:</div>
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">C8W4gs9ahd:</div>
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">czP6a3V02v:</div>
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">OzS4l0RzvN8:</div>
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">vPKWmmXwX:</div>
+							<div style="font-size: 200%; margin-top: 10%; margin-left: 10%; padding-left: 0px; background-color: #0066ff;">93GOuFjPO:</div>
+						</div>
+						<div style="width: 45%; height: 100%; float: right;">
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">3262</div>
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">2851</div>
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">2680</div>
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">2507</div>
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">2503</div>
+							<div style="font-size: 200%; margin-top: 10%; padding-left: 50px; color: #5dccf8;">2495</div>
+						</div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+			</li>
+			<li>
+				<div class="boxall" style="height:calc(50% - .25rem)">
+					<div class="tit02">今日话单数据</div>
+					<div class="boxnav nav02" id="echart2"></div>
+					<div class="boxfoot"></div>
+				</div>
+				<div class="boxall" style="height:calc(50% - .25rem)">
+					<div class="tit03">各区话单数据</div>
+					<div class="boxnav nav03">
+						<div id="echart3" style="width: 100%; height: 100%;"></div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+			</li>
+			<li>
+				<div class="boxall" style="height:calc(50% - .25rem);">
+					<div class="tit01">涉案数据</div>
+					<div class="boxnav nav04">
+						<div class="my_l1">
+							<img src="./icon_7g2qwqjnlgm/document.png" class="my_l1_icon">
+							<span class="my_l1_text">涉案记录 : 89</span>
+						</div>
+						<div class="my_l1">
+							<img src="./icon_7g2qwqjnlgm/phone.png" class="my_l1_icon">
+							<span class="my_l1_text">涉案号码 : 12</span>
+						</div>
+						<div class="my_l1">
+							<img src="./icon_7g2qwqjnlgm/call.png" class="my_l1_icon">
+							<span class="my_l1_text">涉案设备 : 20</span>
+						</div>
+						<div class="my_l1">
+							<img src="./icon_7g2qwqjnlgm/people.png" class="my_l1_icon">
+							<span class="my_l1_text">涉案人员 : 9</span>
+						</div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+				<div class="boxall" style="height:calc(50% - .25rem);">
+					<div class="tit01">今日预警话卡</div>
+					<div class="boxnav nav04">
+						<div class="my_l2_num">
+							98
+						</div>
+						<div style="width: 100%; height: 100%; margin-top: 20px; margin-left: 20px;">
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+							<div class="my_l2_call">131****5412</div>
+							<div class="my_l2_call">183****9884</div>
+							<div class="my_l2_call">136****5412</div>
+							<div class="my_l2_call">183****4152</div>
+						</div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script src="js/jquery.liMarquee.js"></script>
+<!--	<script language="JavaScript" src="js/js.js"></script>-->
+	<script type="text/javascript" src="js/jquery.countup.min.js"></script>
+	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript">
+		$('.counter').countUp();
+
+		$(function () {
+			$('.scrollDiv').liMarquee({
+				direction: 'up',//身上滚动 
+				runshort: false,//内容不足时不滚动
+				scrollamount: 20//速度
+			});
+		});
+
+	</script>
+
+	<script src="js/countDown.js"></script>
+
+	<script type="text/javascript">
+		$("input[name='countDown']").each(function () {
+			var time_end = this.value;
+			var con = $(this).next("span");
+			var _ = this.dataset;
+			countDown(con, {
+				time_end: time_end//开始时间
+			})
+				//提供3个事件分别为:启动,重启,停止
+				.on("countDownStarted countDownRestarted  countDownEnded ", function (arguments) {
+					console.info(arguments);
+				});
+		});
+	</script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loading").fadeOut()
+		})
+
+		/****/
+		/****/
+		$(document).ready(function () {
+			var whei = $(window).width()
+			$("html").css({ fontSize: whei / 20 })
+			$(window).resize(function () {
+				var whei = $(window).width()
+				$("html").css({ fontSize: whei / 20 })
+			});
+		});
+
+		$(function () {
+
+			echarts_1();
+			echarts_2();
+			echarts_3();
+
+			function echarts_1() {
+				var chartDom = document.getElementById('echart1');
+				var myChart = echarts.init(chartDom);
+				var option;
+
+				option = {
+					tooltip: {
+						trigger: 'item'
+					},
+					legend: {
+						top: '5%',
+						left: 'center',
+						textStyle: {
+							color: '#FFF',     // 文字的颜色
+						},
+					},
+					series: [
+						{
+							name: 'Access From',
+							type: 'pie',
+							radius: ['40%', '70%'],
+							avoidLabelOverlap: false,
+							itemStyle: {
+								borderRadius: 10,
+								borderColor: '#fff',
+								borderWidth: 2
+							},
+							label: {
+								show: false,
+								position: 'center'
+							},
+							emphasis: {
+								label: {
+									show: true,
+									fontSize: 40,
+									fontWeight: 'bold'
+								}
+							},
+							labelLine: {
+								show: false
+							},
+							data: [
+								{ value: 89, name: '涉诈话单数量' },
+								{ value: 306, name: '预警话单数量' },
+							]
+						}
+					]
+				};
+
+				option && myChart.setOption(option);
+			}
+
+			function echarts_2() {
+				var chartDom = document.getElementById('echart2');
+				var myChart = echarts.init(chartDom);
+				var option;
+
+				option = {
+					// legend: {
+					// 	textStyle: {
+					// 		color: '#FFF',     // 文字的颜色
+					// 		// fontStyle: 'normal',    // 文字字体的风格（'normal'，无样式；'italic'，斜体；'oblique'，倾斜字体）
+					// 		// fontWeight: 'normal',    // 文字字体的粗细（'normal'，无样式；'bold'，加粗；'bolder'，加粗的基础上再加粗；'lighter'，变细；数字定义粗细也可以，取值范围100至700）
+					// 		// fontSize: '20',    // 文字字体大小
+					// 		// align: 'left',     // 文字水平对齐方式，默认自动（'left'，'center'，'right'）
+					// 		// verticalAlign: 'left',    // 文字垂直对齐方式，默认自动（'top'，'middle'，'bottom'
+					// 		// lineHeight: '50',    // 行高 ）
+					// 		// backgroundColor: 'red',    // 文字块背景色，例：'#123234', 'red', 'rgba(0,23,11,0.3)'
+					// 	},
+					// 	// data: ['主叫', '被叫']
+					// },
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
+						axisLine: {
+							lineStyle: {
+								type: 'solid',
+								color: '#fff', //左边线的颜色
+								width: '0.5' //坐标线的宽度
+							}
+						},
+					},
+					yAxis: {
+						type: 'value',
+						scale:'true',
+						axisLine: {
+							lineStyle: {
+								type: 'solid',
+								color: '#fff', //左边线的颜色
+								width: '0.5' //坐标线的宽度
+							}
+						},
+					},
+					series: [
+						{
+							name: '主叫',
+							type: 'line',
+							// stack: 'Total',
+							color: '#5d7ef8',
+							smooth: "true",
+							// width: '1.0',
+							data: [3214020, 1520134, 856214, 613647, 316853, 721403,
+								1401256, 2214369, 4562354, 6125896, 6547856, 6523698],
+							lineStyle:{
+								width: 5 //坐标线的宽度
+							}
+						},
+						{
+							name: '被叫',
+							type: 'line',
+							// stack: 'Total',
+							smooth: "true",
+							data: [3214020, 1520134, 856214, 613647, 316853, 721403,
+								1401256, 2214369, 4562354, 6125896, 6547856, 6523698],
+							lineStyle:{
+								width: 5 //坐标线的宽度
+							}
+						}
+					]
+				};
+
+				option && myChart.setOption(option);
+			}
+
+			function echarts_3() {
+				var app = {};
+
+				var chartDom = document.getElementById('echart3');
+				var myChart = echarts.init(chartDom);
+				var option;
+
+				const posList = [
+					'left',
+					'right',
+					'top',
+					'bottom',
+					'inside',
+					'insideTop',
+					'insideLeft',
+					'insideRight',
+					'insideBottom',
+					'insideTopLeft',
+					'insideTopRight',
+					'insideBottomLeft',
+					'insideBottomRight'
+				];
+				app.configParameters = {
+					rotate: {
+						min: -90,
+						max: 90
+					},
+					align: {
+						options: {
+							left: 'left',
+							center: 'center',
+							right: 'right'
+						}
+					},
+					verticalAlign: {
+						options: {
+							top: 'top',
+							middle: 'middle',
+							bottom: 'bottom'
+						}
+					},
+					position: {
+						options: posList.reduce(function (map, pos) {
+							map[pos] = pos;
+							return map;
+						}, {})
+					},
+					distance: {
+						min: 0,
+						max: 100
+					}
+				};
+				app.config = {
+					rotate: 90,
+					align: 'left',
+					verticalAlign: 'middle',
+					position: 'insideBottom',
+					distance: 15,
+					onChange: function () {
+						const labelOption = {
+							rotate: app.config.rotate,
+							align: app.config.align,
+							verticalAlign: app.config.verticalAlign,
+							position: app.config.position,
+							distance: app.config.distance
+						};
+						myChart.setOption({
+							series: [
+								{
+									label: labelOption
+								},
+								{
+									label: labelOption
+								},
+								{
+									label: labelOption
+								},
+								{
+									label: labelOption
+								}
+							]
+						});
+					}
+				};
+				const labelOption = {
+					show: true,
+					position: app.config.position,
+					distance: app.config.distance,
+					align: app.config.align,
+					verticalAlign: app.config.verticalAlign,
+					rotate: app.config.rotate,
+					formatter: '{c}  {name|{a}}',
+					fontSize: 16,
+					rich: {
+						name: {}
+					}
+				};
+				option = {
+					legend: {
+						textStyle: {
+							color: '#FFF',     // 文字的颜色
+						},
+						data: ['主叫', '被叫']
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'shadow'
+						}
+					},
+					toolbox: {
+						show: true,
+						orient: 'vertical',
+						left: 'right',
+						top: 'center',
+						feature: {
+							mark: { show: true },
+							dataView: { show: true, readOnly: false },
+							magicType: { show: true, type: ['line', 'bar', 'stack'] },
+							restore: { show: true },
+							saveAsImage: { show: true }
+						}
+					},
+					xAxis: [
+						{
+							axisLine: {
+								lineStyle: {
+									type: 'solid',
+									color: '#fff', //左边线的颜色
+									width: '1' //坐标线的宽度
+								}
+							},
+							type: 'category',
+							axisTick: { show: false },
+							data: ['南岸区', '江北区', '渝中区', '沙坪坝区', '渝北区']
+						}
+					],
+					yAxis: [
+						{
+							axisLine: {
+								lineStyle: {
+									type: 'solid',
+									color: '#fff', //左边线的颜色
+									width: '1' //坐标线的宽度
+								}
+							},
+							type: 'value'
+						}
+					],
+					series: [
+						{
+							name: '主叫',
+							type: 'bar',
+							barGap: 0,
+							// label: labelOption,
+							emphasis: {
+								focus: 'series'
+							},
+							color: '#bd6e4f',
+							data: [152364, 245236, 635214, 201236, 452150]
+						},
+						{
+							name: '被叫',
+							type: 'bar',
+							// label: labelOption,
+							emphasis: {
+								focus: 'series'
+							},
+							color: '#5d7ef8',
+							data: [201563, 486845, 662546, 354126, 225876]
+						}
+					]
+				};
+
+				option && myChart.setOption(option);
+			}
+		})
+	</script>
+	<!-- <meta http-equiv="refresh" content="5;url='https://blog.csdn.net/qq_31766533/article/details/119274641'"> -->
+</body>
+
+</html>

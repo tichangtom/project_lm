@@ -1,0 +1,229 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>反诈大数据平台</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/comon0.css">
+</head>
+
+<body>
+	<div class="loading">
+		<div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+	</div>
+	<div class="head">
+		<h1><a href="./index1.html">反诈大数据平台</a></h1>
+	</div>
+	<div class="mainbox">
+		<ul class="clearfix">
+			<li>
+				<div class="boxall" style="height:calc(33.3333% - .25rem)">
+					<div class="tit01">近日预测涉案风险号码数</div>
+					<div class="boxnav nav01" id="echart1"></div>
+					<div class="boxfoot"></div>
+				</div>
+				<div style="height:calc(33.3333% - .25rem); margin-bottom: .25rem;">
+
+					<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: left;">
+						<div class="tit01">各类用户涉案率</div>
+						<div class="boxnav nav01" id="echart2"></div>
+						<div class="boxfoot"></div>
+					</div>
+					<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: right;">
+						<div class="tit01">模型准确率</div>
+						<div class="boxnav nav01" style="display: flex; align-items: center;">
+							<p class="p2"><span class="counter">95</span>%</p>
+						</div>
+						<div class="boxfoot"></div>
+					</div>
+				</div>
+
+				<div class="boxall" style="height:calc(33.3333% - .25rem)">
+					<div class="tit01">近6h预测涉案风险号</div>
+					<div class="boxnav nav01" id="echart3"></div>
+					<div class="boxfoot"></div>
+				</div>
+			</li>
+			<li>
+
+				<div class="boxall" style="height:calc(33.33333% - .25rem)">
+					<div class="tit02">今日信息</div>
+					<div class="boxnav nav02">
+						<div>
+							<p class="p1">已处理号码/高风险号码</p>
+							<p class="p2"><span class="counter">15633</span>/<span class="counter">68000</span></p>
+							<p class="p3">
+								<span><i class="dot dot1"></i>未完成：52367</span>
+								<span><i class="dot dot2"></i>完成率：22.9%</span>
+							</p>
+						</div>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+				<div class="boxall" style="height:calc(66.666666% - .25rem)">
+					<div class="tit03">疑似涉案号码</div>
+					<div class="boxnav nav03">
+
+						<div class="listhead listhead1">
+							<span>product_no</span>
+							<span>lac</span>
+							<span>cellid</span>
+							<span>call_duration</span>
+							<span>day_id</span>
+							<span>涉案风险</span>
+						</div>
+						<div class="listnav listnav1 scrollDiv">
+							<ul>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+								<li> <span>183****5482</span> <span>33CE</span> <span>26581</span> <span>15min</span>
+									<span>20230606</span> <span class="text-red">90%</span>
+								</li>
+								<li><span>136****5482</span> <span>22BE</span> <span>23343</span> <span>5min</span>
+									<span>20230606</span> <span class="text-red">95%</span>
+								</li>
+								<li> <span>131****5862</span> <span>33CE</span> <span>23341</span> <span>6min</span>
+									<span>200230606</span> <span class="text-yellow">85%</span>
+								</li>
+							</ul>
+						</div>
+
+
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+			</li>
+			<li>
+				<div class="boxall" style="height:calc(100% - .25rem); padding: 0;">
+					<div class="tit04">疑似涉案号码话单信息</div>
+					<div class="boxnav nav04">
+
+						<div class="listhead listhead2">
+							<span>product_no</span>
+							<span>opposite_no</span>
+							<span>imei</span>
+
+						</div>
+
+						<div class="listnav listnav2 scrollDiv">
+							<ul class="smjl" id="target-element">
+								<!-- <li>
+									<span>131****8565</span>
+									<span>131****5678</span>
+									<span>86014802900</span>
+								</li> -->
+							</ul>
+						</div>
+						<script>
+							const itemList = ['131****8565', '131****5678', '86014802900'];
+							for (let i = 0; i < 30; i++) {
+								const li = document.createElement('li');
+								const span1 = document.createElement('span');
+								const span2 = document.createElement('span');
+								const span3 = document.createElement('span');
+
+								span1.innerText = itemList[0];
+								span2.innerText = itemList[1];
+								span3.innerText = itemList[2];
+
+								li.appendChild(span1);
+								li.appendChild(span2);
+								li.appendChild(span3);
+
+								document.getElementById('target-element').appendChild(li);
+							}
+						</script>
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script src="js/jquery.liMarquee.js"></script>
+	<script language="JavaScript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.countup.min.js"></script>
+	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript">
+		$('.counter').countUp();
+
+		$(function () {
+			$('.scrollDiv').liMarquee({
+				direction: 'up',//身上滚动
+				runshort: false,//内容不足时不滚动
+				scrollamount: 20//速度
+			});
+		});
+
+	</script>
+
+	<script src="js/countDown.js"></script>
+	<script type="text/javascript">
+		$("input[name='countDown']").each(function () {
+			var time_end = this.value;
+			var con = $(this).next("span");
+			var _ = this.dataset;
+			countDown(con, {
+				time_end: time_end//开始时间
+			})
+				//提供3个事件分别为:启动,重启,停止
+				.on("countDownStarted countDownRestarted  countDownEnded ", function (arguments) {
+					console.info(arguments);
+				});
+		});
+
+
+
+
+	</script>
+	<!-- <meta http-equiv="refresh" content="5;url='https://blog.csdn.net/qq_31766533/article/details/119274641'"> -->
+</body>
+
+</html>
